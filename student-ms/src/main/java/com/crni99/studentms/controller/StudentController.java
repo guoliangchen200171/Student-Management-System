@@ -33,13 +33,10 @@ import jakarta.validation.constraints.Past;
 @RestController
 @RequestMapping("api/v1/student-ms/students")
 public class StudentController {
-
 	private final StudentService studentService;
-
 	public StudentController(StudentService studentService) {
 		this.studentService = studentService;
 	}
-
 	@PostMapping
 	public ResponseEntity<Student> saveStudent(@Valid @RequestBody Student student) {
 		Student newStudent = studentService.saveStudent(student);
